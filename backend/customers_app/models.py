@@ -6,7 +6,7 @@ class Customer(models.Model):
     first_name = models.CharField(blank= False, max_length= 255)
     last_name = models.CharField(blank= False, max_length= 255)
     phone_number = models.CharField(blank= False, max_length= 10)
-    email = models.EmailField(blank= False, max_length= 255)
+    email = models.EmailField(blank= False, max_length= 255, unique= True)
 
     def __str__(self):
         return f"Id {self.customer_id} - {self.first_name} {self.last_name}."
@@ -26,9 +26,8 @@ class Vehicle(models.Model):
     make = models.CharField(blank= False, max_length= 255)
     model = models.CharField(blank= False, max_length= 255)
     year = models.IntegerField(blank= False)
-    VIN = models.CharField(blank= False, max_length= 17)
+    VIN = models.CharField(blank= False, max_length= 17, unique= True)
     license_plate = models.CharField(max_length= 7)
-    mileage = models.IntegerField()
 
     def __str__(self):
         return f"Vehicle ID {self.vehicle_id} for Customer ID {self.customer_id}."

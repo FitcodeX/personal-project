@@ -1,0 +1,84 @@
+.button-group {
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  
+  .button-group button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  .service-list {
+    margin-top: 20px;
+  }
+  
+  .service-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .service-table th, .service-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .service-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .service-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .form-container {
+    margin-top: 20px;
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container label {
+    margin: 5px 0;
+  }
+  
+  .form-container input {
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #218838;
+  }
+  
+  .form-container button[type="button"] {
+    background-color: #dc3545;
+  }
+  
+  .form-container button[type="button"]:hover {
+    background-color: #c82333;
+  }
+  

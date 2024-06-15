@@ -10,5 +10,3 @@ urlpatterns = [
     path('vehicles/create/', CreateVehicle.as_view(), name='create_vehicle')
 ]
 
-
-#verify that post works properly if not create a new class

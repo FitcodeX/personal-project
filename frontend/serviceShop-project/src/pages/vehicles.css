@@ -1,0 +1,25 @@
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; 
+  }
+  
+  .vehicle-list {
+    margin-top: 20px;
+  }
+  
+  .vehicle-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .vehicle-table th, .vehicle-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .vehicle-table th {
+    background-color: #f2f2f2;
+  }
+  

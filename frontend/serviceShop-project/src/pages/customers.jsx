@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './customers.css'; 
 
-const Customers = () => {
+export default function Customers() {
   const [customers, setCustomers] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const fetchCustomers = async () => {
     try {
@@ -16,12 +17,11 @@ const Customers = () => {
   };
 
   useEffect(() => {
-
     fetchCustomers();
   }, []);
 
   const handleAddCustomer = () => {
-    history.push('addcustomer');
+    navigate('/addcustomer');
   };
 
   return (
@@ -31,20 +31,36 @@ const Customers = () => {
         <button onClick={handleAddCustomer}>Add Customer</button>
       </div>
       <div className="customer-list">
-        {customers.length > 0 ? (
-          <ul>
-            {customers.map((customer) => (
-              <li key={customer.pk}>
-                {customer.fields.first_name} {customer.fields.last_name}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No customers found.</p>
-        )}
+        <h3>All Customers</h3>
+        <table className="customer-table">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {customers.length > 0 ? (
+              customers.map((customer) => (
+                <tr key={customer.customer_id}>
+                  <td>{customer.customer_id}</td>
+                  <td>{customer.first_name}</td>
+                  <td>{customer.last_name}</td>
+                  <td>{customer.phone_number}</td>
+                  <td>{customer.email}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5">No customers found.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
-
-export default Customers;

@@ -1,0 +1,11 @@
+p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }

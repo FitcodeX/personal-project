@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import axios from 'axios';
+import './addCustomer.css'; 
 
 export default function AddCustomer() {
     const [firstName, setFirstName] = useState('');
@@ -7,7 +8,7 @@ export default function AddCustomer() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const newCustomer = {
@@ -17,15 +18,21 @@ export default function AddCustomer() {
             email: email,
         };
 
-        axios.post('http://localhost:8000/api/v1/customers/create/', newCustomer)
-            .then((response) => {
-                console.log(response.data);
-                // Handle success
-            })
-            .catch((error) => {
-                console.error(error);
-                // Handle error
-            });
+        console.log('Submitting new customer:', newCustomer); 
+
+        try {
+            const response = await axios.post('http://localhost:8000/api/v1/customers/create/', newCustomer);
+            console.log(response.data);
+            // Handle success
+            alert('Customer created successfully!');
+            setFirstName('');
+            setLastName('');
+            setPhoneNumber('');
+            setEmail('');
+        } catch (error) {
+            console.error('Error creating customer:', error.response?.data || error.message); 
+            alert('Failed to create customer. Check the console for details.');
+        }
     };
 
     return (
@@ -69,4 +76,4 @@ export default function AddCustomer() {
             <button type="submit">Create Customer</button>
         </form>
     );
-};
+}

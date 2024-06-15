@@ -9,7 +9,7 @@ from inventory_app.models import Inventory
 class WorkOrder(models.Model):
     workOrder_id = models.AutoField(primary_key= True)
     customer_id = models.OneToOneField('customers_app.Customer', on_delete=models.CASCADE, blank= False)
-    # vehicle_id = models.OneToOneField(Vehicles, blank = False)
+    vehicle_mileage = models.IntegerField(default=0)
     service_description = models.CharField(blank= False, max_length=1000)
     notes = models.CharField(max_length= 1000)
     date = models.DateField(auto_created= True)
