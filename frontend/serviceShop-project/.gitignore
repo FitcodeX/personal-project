@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+/Users/lones/CP_Foxtrot/personal-project/frontend/serviceShop-project/server.cert
+/Users/lones/CP_Foxtrot/personal-project/frontend/serviceShop-project/server.key
+/Users/lones/CP_Foxtrot/personal-project/.env
