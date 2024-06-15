@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './customers.css'; 
+import CalendarComponent from '../components/CalenderComponent';
 
 export default function Customers() {
   const [customers, setCustomers] = useState([]);
@@ -26,6 +27,7 @@ export default function Customers() {
 
   return (
     <div>
+      <CalendarComponent />
       <div className="button-group">
         <button onClick={fetchCustomers}>Show All Customers</button>
         <button onClick={handleAddCustomer}>Add Customer</button>

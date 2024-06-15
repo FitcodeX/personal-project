@@ -26,10 +26,6 @@ function App() {
       <Route path='/addVehicle' element={<AddVehicle />}/>
       <Route path='/workOrders' element={<WorkOrders/>}/>
       <Route path='/services' element={<Services/>}/>
-      {/* <Route path='/create_workOrder' element={<AddVehicle />}/> //create a createWorkOrder file */}
-      {/* {//path for services }
-      {//path for create services} */}
-
     </Routes>
     </BrowserRouter>
     </>
